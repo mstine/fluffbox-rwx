@@ -1,0 +1,81 @@
+h1 {
+    color: #0960a8;
+}
+
+h2 {
+    color: #FCB037;
+}
+
+.speaker {
+    text-align: center;
+}
+
+body {
+    background-color: #0960a8; 
+}
+
+.main {
+    background-color: #fff;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-top: 25px;
+}
+
+.header {
+    padding-top: 25px;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.headerLink {
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #0960a8;
+
+}
+
+.headerLink:hover {
+    color: #0960a8;
+    
+}
+
+.headerBox {
+    text-align: right;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+
+.accountBar {
+    background-color: #FCB037;
+    margin-bottom: 10px;
+    height: 28px;
+    line-height: 26px;
+}
+
+.accountBarSearch {
+    text-align: right;
+}
+
+
+.mastheadTop {
+    text-align: center;
+}
+
+.mastheadTop h1 {
+    margin-bottom: -5px;
+}
+
+.speakerInfo {
+    padding: 10px 10px 10px 10px;
+    border: #0960a8 solid medium;
+    width: 300px;
+    height: 350px;
+    position: absolute;
+    background-color: white;
+}
+
