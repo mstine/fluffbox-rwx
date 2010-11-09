@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="fluffbox.rwx.Speaker" contentType="text/html;charset=UTF-8" %>
 <html>
 <head><title>Find a Speaker</title>
   <meta name="layout" content="main"/>
@@ -54,6 +54,10 @@
   </g:javascript>
 </head>
 <body>
+<h1>All Speakers</h1>
+<div class="paginateButtons span-24 last">
+<g:paginate controller="speaker" action="find" total="${Speaker.count()}" max="8"/>
+  </div>
 <g:each in="${speakers}" var="speaker" status="i">
   <g:if test="${i % 4 == 0}"><div class="speakerRow span-24 last"></g:if>
   <div class="speaker span-6 <g:if test="${(i % 4 == 3) || (speakers.size() - i ==1)}">last</g:if>">
