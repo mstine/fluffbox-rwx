@@ -1,0 +1,11 @@
+1) Find a Speaker
+2) Test Pagination
+3) Select a Speaker
+4) Find Kiosks where Available
+5) Rent via Kiosk Screen
+6) Find a Kiosk
+7) List Speakers at Kiosk
+8) Select a speaker from Kiosk
+9) Rent via Speaker Screen
+10) Login
+11) Create an account

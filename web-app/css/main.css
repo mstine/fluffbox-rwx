@@ -57,6 +57,16 @@ body {
     line-height: 26px;
 }
 
+.accountBarBox a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+.accountBarBox a:hover {
+    color: black;
+}
+
 .accountBarSearch {
     text-align: right;
 }
@@ -146,3 +156,43 @@ body {
     padding: 2px 3px;
 }
 
+.speakerDetailsLeft {
+    text-align: right;
+}
+
+.speakerDetailsLeft img {
+    padding-right: 25px;
+    padding-top: 28px;
+}
+
+.speakerDetailsLeft p {
+    padding-right: 30px;
+    padding-top: 15px;
+}
+
+.speakerDetailsLeft p a {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: #0960a8;    
+}
+
+.speakerDetailsRight h1 {
+    margin-top: 25px;
+    margin-bottom: 1px;
+}
+
+.speakerDetailsRight p {
+    padding-right: 100px;
+    text-align: justify;
+}
+
+
+
+.reserveCost table {
+    width: 30%;
+}
+
+.reserveCost table tr td {
+    text-align: left;
+}

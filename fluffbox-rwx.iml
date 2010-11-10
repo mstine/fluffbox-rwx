@@ -40,6 +40,9 @@
       <library name="Grails User Library">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$MODULE_DIR$/../../.ivy2/cache/org.springframework.security/org.springframework.security.web/jars/org.springframework.security.web-3.0.3.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../.ivy2/cache/org.springframework.security/org.springframework.security.core/jars/org.springframework.security.core-3.0.3.RELEASE.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../.ivy2/cache/dumbster/dumbster/jars/dumbster-1.6.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

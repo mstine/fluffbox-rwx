@@ -13,6 +13,7 @@
   <g:javascript library="prototype"/>
   <g:javascript>
     function updateKiosks(transport) {
+        //alert("hello!");
       map.clearOverlays();
 
       var kioskList = $('kioskList');
@@ -20,7 +21,8 @@
         oldKiosk.remove();
       });
 
-      transport.responseJSON.each(function(kiosk) {
+      transport.responseJSON.each(function(clone) {
+        var kiosk = clone.kiosk;
         var kioskHtml = '<strong><a class="kioskLink" id="kiosk-link-' + kiosk.id + '">' + kiosk.store.name;
 
         if (kiosk.inside) {
@@ -37,7 +39,7 @@
         kioskHtml += ' ';
         kioskHtml += kiosk.zipCode;
         kioskHtml += '<br/><br/>'
-        kioskHtml += '<a class="kioskLink" href="${createLink(controller:"speakerClone", action:"findByKiosk")}/'+kiosk.id+'">Find Speakers Here</a>';  
+        kioskHtml += '<a class="kioskLink" href="${createLink(controller: "rental", action: "reserve")}/'+clone.id+'">RENT NOW</a>';
 
         kioskList.insert('<li class="kioskListItem">' + kioskHtml + '</li>')
 
@@ -63,21 +65,17 @@
   <gmap:resources location="Ft. Lauderdale, FL"/>
   <g:javascript>
     document.observe("dom:loaded", function() {
-        initialize();
-    })
+      initialize();
+      <g:remoteFunction controller="speakerClone" action="searchBySpeaker" id="${id}" onSuccess="updateKiosks(e)"/>
+    });
   </g:javascript>
 </head>
 <body>
 <div class="columns span-24 last">
   <div class="left span-11">
-    <h2>Find a Fluffbox</h2>
-    <div class="kioskSearch">
-      <g:formRemote name="searchKiosksForm" url="[controller: 'kiosk', action: 'search']" onSuccess="updateKiosks(e)">
-        <label for="searchCriteria">Location:</label>
-        <g:textField id="searchCriteria" name="searchCriteria"/>
-        <g:submitButton name="searchButton" value="Search"/>
-      </g:formRemote>
-    </div>
+    <h2>Find a Fluffbox</h2>    
+    <h3>Selected speaker:</h3>
+    <p><strong>${speaker.name}</strong><br/>${speaker.title}</p>
     <div class="searchResults"><ul id="kioskList"></ul></div>
   </div>
   <div class="right span-13 last">

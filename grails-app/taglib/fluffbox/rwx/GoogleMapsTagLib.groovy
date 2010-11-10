@@ -30,7 +30,7 @@ class GoogleMapsTagLib {
       }
     }
 
-    window.onload = initialize;
+    //window.onload = initialize;
     window.unload = GUnload();
 </script>
 """

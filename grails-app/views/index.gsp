@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Welcome to Grails</title>
+  <title>Fluffbox</title>
   <meta name="layout" content="main"/>
 </head>
 <body>

@@ -1,5 +1,7 @@
 package fluffbox.rwx
 
+import grails.converters.deep.JSON
+
 class SpeakerCloneController {
 
     def scaffold = SpeakerClone
@@ -15,6 +17,26 @@ class SpeakerCloneController {
       }
 
       [speakers:speakers, kiosk:kiosk, speakersSize:SpeakerClone.countByKiosk(kiosk)]
-
     }
+
+    def findBySpeaker = {
+      
+
+      [id:params.id, speaker:Speaker.get(params.id)]
+    }
+
+    def searchBySpeaker = {
+      def speaker = Speaker.get(params.id)
+      def clones = SpeakerClone.findAllBySpeaker(speaker)
+
+      def kiosks = clones.collect {
+        it.kiosk
+      }
+
+      render clones as JSON
+    }
+
+  def show = {
+    [clone:SpeakerClone.get(params.id)]
+  }
 }
