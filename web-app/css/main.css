@@ -79,6 +79,49 @@ body {
     background-color: white;
 }
 
+.left {
+    height: 500px;
+}
+
+.right {
+    padding-top: 50px;
+    height: 500px;
+}
+
+.map_canvas {
+    vertical-align: middle;
+}
+
+.searchResults {
+    overflow-y: auto;
+    height: 400px;
+}
+
+.kioskSearch {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: black solid thin;    
+}
+
+.kioskListItem {
+    list-style-type: none;
+    border-bottom: black solid thin;
+    margin-bottom: 15px;
+    margin-left: -40px;
+    list-style-position: outside;
+}
+
+.kioskLink {
+    text-decoration: none;
+    color: #0960a8;
+    cursor: default;
+}
+
+.kioskLink:hover {
+    color: #FCB037;
+    cursor: default;
+}
+
 /* PAGINATION */
 
 .paginateButtons {
