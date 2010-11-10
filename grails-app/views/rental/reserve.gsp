@@ -1,9 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-  <head><title>Reserve Speaker</title>
-    <meta name="layout" content="main"/>
-  </head>
-  <body>
+<head><title>Reserve Speaker</title>
+  <meta name="layout" content="main"/>
+</head>
+<body>
+<div class="span-24 last">
+  <div class="reserveLeft span-12">
     <div class="reserveLocation span-24 last">
       <h2>Pickup location:</h2>
       <p>
@@ -36,5 +38,10 @@
         </tr>
       </table>
     </div>
-  </body>
+  </div>
+  <div class="reserveRight span-12 last">
+    <h1 class="bigLink">Click <g:link controller="rental" action="payment">Continue</g:link> to sign-in or create an account.</h1>
+  </div>
+</div>
+</body>
 </html>

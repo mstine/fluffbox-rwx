@@ -67,6 +67,16 @@ body {
     color: black;
 }
 
+.bigLink a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0960a8;
+}
+
+.bigLink a:hover {
+    color: #0960a8;
+}
+
 .accountBarSearch {
     text-align: right;
 }
@@ -195,4 +205,12 @@ body {
 
 .reserveCost table tr td {
     text-align: left;
+}
+
+.reserveLeft {
+}
+
+.reserveRight {
+    text-align: left;
+    padding-top: 200px;
 }

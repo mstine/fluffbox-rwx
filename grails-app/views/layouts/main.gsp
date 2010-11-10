@@ -24,10 +24,10 @@
       <g:link controller="kiosk" action="find" class="headerLink">FIND A<br/>FLUFFBOX</g:link>
     </div>
     <div class="headerBox span-4">
-      <g:link controller="speaker" action="comingSoon" class="headerLink">COMING<br/>SOON</g:link>
+      <a href="#" class="headerLink">COMING<br/>SOON</a>
     </div>
     <div class="headerBox span-4 last">
-      <g:link controller="speaker" action="topTwenty" class="headerLink">TOP 20<br/>RENTALS</g:link>
+      <a href="#" class="headerLink">TOP 20<br/>RENTALS</a>
     </div>
   </div>
   <div class="accountBar span-24 last">
