@@ -36,6 +36,8 @@
         kioskHtml += kiosk.state;
         kioskHtml += ' ';
         kioskHtml += kiosk.zipCode;
+        kioskHtml += '<br/><br/>'
+        kioskHtml += '<a class="kioskLink" href="${createLink(controller:"speakerClone", action:"findByKiosk")}/'+kiosk.id+'">Find Speakers Here</a>';  
 
         kioskList.insert('<li class="kioskListItem">' + kioskHtml + '</li>')
 

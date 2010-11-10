@@ -16,7 +16,7 @@
         <img src="${resource(dir: "images", file: "speaker.jpg")}"/>
       </div>
       <div class="span-6 last">
-        <h1>FIND A<br/>SPEAKER</h1>
+        <h1><g:link controller="speaker" action="find" class="headerLink">FIND A<br/>SPEAKER</g:link></h1>
         <h3>RWX Speakers available now.</h3>
 
       </div>
@@ -28,7 +28,7 @@
       <img src="${resource(dir: "images", file: "kiosk.jpg")}"/>
     </div>
     <div class="span-6 last">
-      <h1>FIND A<br/>FLUFFBOX</h1>
+      <h1><g:link controller="kiosk" action="find" class="headerLink">FIND A<br/>FLUFFBOX</g:link></h1>
       <h3>42,000 Fluffbox locations near you.</h3>
     </div>
   </div>
