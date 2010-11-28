@@ -15,4 +15,12 @@ class SpeakerController {
       [speakers:speakers]
 
     }
+
+    def search = {
+      def max = Math.min(params.max ? params.max.toInteger() : 8, 100)
+
+      def speakers = Speaker.findAllByNameLike("%${params.searchTerm}%", [max:max, offset:params.offset])
+      
+      [speakers:speakers, speakersSize:speakers.size()]
+    }
 }

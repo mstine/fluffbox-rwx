@@ -42,7 +42,12 @@
     </sec:ifLoggedIn>
     <div class="accountBarBox span-3"><a href="#">Get a Free Rental</a></div>
     <div class="accountBarBox span-4"><a href="#">How Fluffbox Works</a></div>
-    <div class="accountBarSearch span-6 last"><input type="text"/><input type="submit" value="Search"/></div>
+    <div class="accountBarSearch span-6 last">
+      <g:form controller="speaker" action="search">
+        <g:textField name="searchTerm"/>
+        <g:submitButton name="searchBtn" value="Search"/>
+      </g:form>
+    </div>
   </div>
   <div class="bodyContent span-24 last">
     <g:layoutBody/>
