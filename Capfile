@@ -47,12 +47,12 @@ namespace :tomcat do
 
   desc "start tomcat"
   task :start do
-    "nohup #{tomcat_ctrl}/startup.sh"
+    system "nohup #{tomcat_ctrl}/startup.sh"
   end
 
   desc "stop tomcat"
   task :stop do
-    "#{tomcat_ctrl}/shutdown.sh"
+    system "#{tomcat_ctrl}/shutdown.sh"
   end
 
   desc "stop and start tomcat"
@@ -74,7 +74,7 @@ end
 after 'deploy:setup' do
   cmd = "ln -sf #{deploy_to}/current/`basename #{war}` #{tomcat_home}/webapps/`basename #{war}`"
   puts cmd
-  sudo cmd
+  system cmd
 end
 
 # collect up our war into the deploy_from folder
