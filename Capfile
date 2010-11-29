@@ -103,6 +103,33 @@ before 'deploy:symlink' do
   sleep 10
 end
 
+def getDeploymentStatus
+  output = `wget -O - http://localhost:8081/fluffbox-rwx-0.1 | grep "Easy NFJS Speaker Rentals" | wc -l`
+  status = output.strip
+end 
+
+after 'deploy:restart' do
+  status = getDeploymentStatus
+
+  tries = 0
+  loop do
+    if status == "1"
+      puts "Deployment Success!"
+      exit
+    elsif status == "0"
+      tries += 1
+      puts "Application still down after #{tries} tries!"
+
+      if tries == 10 #After 90 seconds we're considering the deployment a failure
+        raise RuntimeError, 'Deployment Failure!'
+      end  
+
+      sleep 10  
+      status = getDeploymentStatus
+    end
+  end
+end
+
 #
 # Disable all the default tasks that
 # either don't apply, or I haven't made work.
