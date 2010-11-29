@@ -94,8 +94,13 @@ end
 # restart tomcat
 namespace :deploy do
   task :restart do
-    tomcat.restart
+    tomcat.start
   end
+end
+
+before 'deploy:symlink' do
+  tomcat.stop
+  sleep 10
 end
 
 #
