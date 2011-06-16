@@ -21,7 +21,7 @@
       });
 
       transport.responseJSON.each(function(kiosk) {
-        var kioskHtml = '<strong><a class="kioskLink" id="kiosk-link-' + kiosk.id + '">' + kiosk.store.name;
+        var kioskHtml = '<strong><a href="#" class="kioskLink" id="kiosk-link-' + kiosk.id + '">' + kiosk.store.name;
 
         if (kiosk.inside) {
           kioskHtml += ' (Inside)</a></strong><br/>';
@@ -37,7 +37,7 @@
         kioskHtml += ' ';
         kioskHtml += kiosk.zipCode;
         kioskHtml += '<br/><br/>'
-        kioskHtml += '<a class="kioskLink" href="${createLink(controller:"speakerClone", action:"findByKiosk")}/'+kiosk.id+'">Find Speakers Here</a>';  
+        kioskHtml += '<a class="kioskLink" href="${createLink(controller:"speakerClone", action:"findByKiosk")}/'+kiosk.id+'">Find Speakers Here</a>';
 
         kioskList.insert('<li class="kioskListItem">' + kioskHtml + '</li>')
 
@@ -52,7 +52,9 @@
 
           map.addOverlay(marker);
 
-          $('kiosk-link-' + kiosk.id).observe("click", function() {
+          $('kiosk-link-' + kiosk.id).observe("click", function(e) {
+              e.stop();
+              alert("HI!");
             map.openInfoWindowHtml(point, kioskHtml);
 
           });

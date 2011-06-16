@@ -7,6 +7,8 @@ class KioskController {
 
     def scaffold = Kiosk
 
+  def test = {}
+
     def find = {
       
     }

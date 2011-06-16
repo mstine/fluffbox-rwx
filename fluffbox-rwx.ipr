@@ -30,6 +30,7 @@
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
+  <component name="IdProvider" IDEtalkID="FD3D0796BFAB3A0B42C8A7AF54199EB7" />
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" />
     <option name="OPTION_SCOPE" value="protected" />
@@ -173,6 +174,9 @@
       <module fileurl="file://$PROJECT_DIR$/fluffbox-rwx.iml" filepath="$PROJECT_DIR$/fluffbox-rwx.iml" />
       <module fileurl="file://$PROJECT_DIR$/fluffbox-rwx-grailsPlugins.iml" filepath="$PROJECT_DIR$/fluffbox-rwx-grailsPlugins.iml" />
     </modules>
+  </component>
+  <component name="ProjectResources">
+    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
