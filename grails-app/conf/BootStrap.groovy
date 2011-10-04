@@ -12,28 +12,28 @@ class BootStrap {
 
   def init = { servletContext ->
 
-    new Store(name: "Walgreens").save()
+    new Store(name: "Walgreens").save(flush:true)
     new Kiosk(store: Store.findByName("Walgreens"), inside: true, address: "3895 W Broward Blvd",
             city: "Ft Lauderdale", state: "FL", zipCode: "33312-1017").save()
-    new Store(name: "Winn Dixie").save()
+    new Store(name: "Winn Dixie").save(flush:true)
     new Kiosk(store: Store.findByName("Winn Dixie"), inside: false, address: "1531 N State Road 7",
             city: "Lauderhill", state: "FL", zipCode: "33313-5807").save()
     new Kiosk(store: Store.findByName("Winn Dixie"), inside: false, address: "3800 N Ocean Blvd",
             city: "Fort Lauderdale", state: "FL", zipCode: "33308-6432").save()
-    new Store(name: "Albertsons").save()
+    new Store(name: "Albertsons").save(flush:true)
     new Kiosk(store: Store.findByName("Albertsons"), inside: true, address: "950 E Commercial Blvd",
             city: "Oakland Park", state: "FL", zipCode: "33334-3210").save()
     new Kiosk(store: Store.findByName("Walgreens"), inside: true, address: "601 E Commercial Blvd",
             city: "Oakland Park", state: "FL", zipCode: "33334-3239").save()
-    new Store(name: "Walmart").save()
+    new Store(name: "Walmart").save(flush:true)
     new Kiosk(store: Store.findByName("Walmart"), inside: true, address: "3001 N State Rd 7",
             city: "Lauderdale Lakes", state: "FL", zipCode: "33313-1913").save()
     new Kiosk(store: Store.findByName("Winn Dixie"), inside: false, address: "3116 W Commercial Blvd",
             city: "Fort Lauderdale", state: "FL", zipCode: "33309-3415").save()
-    new Store(name: "Walmart Neighborhood Markets").save()
+    new Store(name: "Walmart Neighborhood Markets").save(flush:true)
     new Kiosk(store: Store.findByName("Walmart Neighborhood Markets"), inside: true, address: "1199 S Federal Hwy",
             city: "Pompano Beach", state: "FL", zipCode: "33062-7067").save()
-    new Store(name: "Exxon Mobil").save()
+    new Store(name: "Exxon Mobil").save(flush:true)
     new Kiosk(store: Store.findByName("Exxon Mobil"), inside: true, address: "2399 S University Dr",
             city: "Davie", state: "FL", zipCode: "33324-5844").save()
     new Kiosk(store: Store.findByName("Walgreens"), inside: true, address: "3015 S University Dr",
@@ -89,27 +89,27 @@ class BootStrap {
 			new Speaker(name: "Jeremy Deane", title: "Director of Research & Architecture", imageUrl: "http://www.nofluffjuststuff.com/s/images/bio/20924_Deane_20110408_051639_medium_sq.jpg", bio: """Jeremy Deane has over 15 years of software engineering experience in leadership positions. His expertise includes Enterprise Integration Architecture, Web Application Architecture, and Software Process Improvement. In addition, he is an accomplished speaker and technical author. """).save()
 			new Speaker(name: "James Carr", title: "Software Craftsman", imageUrl: "http://www.nofluffjuststuff.com/s/images/bio/4170_Carr_20110408_051556_medium_sq.jpg", bio: """James is a contractor in the St.Louis area that shares a passion for software craftsmanship and has enjoyed software development since he wrote his first program in Basic on the Tandy Color Computer 3 way back in 1988.  In addition to a passion for technology, he also has a keen interest in improving teamwork and collaboration through interactive activities to get people thinking creatively and develop stronger, richer communication channels with their stakeholders. """).save()
 			new Speaker(name: "David Bock", title: "Principal Consultant, CodeSherpas Inc.", imageUrl: "http://www.nofluffjuststuff.com/s/images/bio/34_Bock_20110408_053548_medium_sq.jpg", bio: """ David Bock is a Principal Consultant at CodeSherpas, a company he founded in 2007. Mr. Bock is also the President of the Northern Virginia Java Users Group, the Editor of O'Reilly's OnJava.com website, and a frequent speaker on technology in venues such as the No Fluff Just Stuff Software Symposiums.   In January 2006, Mr. Bock was honored by being awarded the title of Java Champion by a panel of esteemed leaders in the Java Community in a program sponsored by Sun. There are approximately 100 active Java Champions worldwide.   David has also served on several JCP panels, including the Specification of the Java 6 Platform and the upcoming Java Module System.  In addition to his public speaking and training activities, Mr. Bock actively consults as a software engineer, project manager, and team mentor for commercial and government clients.  """).save()
-			new Speaker(name: "Dan Allen", title: "Senior Software Engineer", imageUrl: "http://www.nofluffjuststuff.com/s/images/bio/5206_Allen_20110408_050959_medium_sq.jpg", bio: """Dan Allen is a member of the Seam and Web Beans project teams at JBoss by Red Hat, author of Seam in Action and a frequent speaker at major industry conferences such as JavaOne, Devoxx, TSSJS, Jazoon and JSFOne. Dan is known for his passionate work, with nearly a decade of development experience using technologies that include Java frameworks (Seam, JSF, EJB3, Hibernate, Spring, Struts), testing frameworks (JUnit, TestNG), JavaScript and DOM scripting, CSS and page layouts, Maven 2, Ant, Groovy, and many others.  Quickly after graduating from college, Dan became captivated by the world of free and open source software (FOSS). His involvment in FOSS helped him transition into the software development industry. He soon discovered the combination of Linux and the Java EE platform to be the ideal blend on which to build his professional career. In his search for a robust Web framework, Dan discovered JBoss Seam, which was quickly granted this most coveted spot in his development toolbox. The rest, as they say, is history. Dan is also a dedicated open source and Linux advocate and blogs about his experiences regularly. You can keep up with his discoveries by subscribing to his blog at http://mojavelinux.com. """).save()
+			new Speaker(name: "Dan Allen", title: "Senior Software Engineer", imageUrl: "http://www.nofluffjuststuff.com/s/images/bio/5206_Allen_20110408_050959_medium_sq.jpg", bio: """Dan Allen is a member of the Seam and Web Beans project teams at JBoss by Red Hat, author of Seam in Action and a frequent speaker at major industry conferences such as JavaOne, Devoxx, TSSJS, Jazoon and JSFOne. Dan is known for his passionate work, with nearly a decade of development experience using technologies that include Java frameworks (Seam, JSF, EJB3, Hibernate, Spring, Struts), testing frameworks (JUnit, TestNG), JavaScript and DOM scripting, CSS and page layouts, Maven 2, Ant, Groovy, and many others.  Quickly after graduating from college, Dan became captivated by the world of free and open source software (FOSS). His involvment in FOSS helped him transition into the software development industry. He soon discovered the combination of Linux and the Java EE platform to be the ideal blend on which to build his professional career. In his search for a robust Web framework, Dan discovered JBoss Seam, which was quickly granted this most coveted spot in his development toolbox. The rest, as they say, is history. Dan is also a dedicated open source and Linux advocate and blogs about his experiences regularly. You can keep up with his discoveries by subscribing to his blog at http://mojavelinux.com. """).save(flush:true)
 			
-    new SpeakerClone(speaker: Speaker.get(1), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(2), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(3), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(4), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(5), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(6), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(7), kiosk: Kiosk.get(1)).save()
-    new SpeakerClone(speaker: Speaker.get(8), kiosk: Kiosk.get(1)).save()
+    new SpeakerClone(speaker: Speaker.findByName("Craig Walls"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Venkat Subramaniam"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Matt Stine"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Ken Sipe"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Nathaniel Schutta"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Mark Richards"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Pratik Patel"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Ted Neward"), kiosk: Kiosk.findByAddress("3895 W Broward Blvd")).save()
 
-    new SpeakerClone(speaker: Speaker.get(1), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(2), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(3), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(4), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(5), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(6), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(7), kiosk: Kiosk.get(2)).save()
-    new SpeakerClone(speaker: Speaker.get(8), kiosk: Kiosk.get(2)).save()
+    new SpeakerClone(speaker: Speaker.findByName("Craig Walls"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Venkat Subramaniam"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Matt Stine"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Ken Sipe"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Nathaniel Schutta"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Mark Richards"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Pratik Patel"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
+    new SpeakerClone(speaker: Speaker.findByName("Ted Neward"), kiosk: Kiosk.findByAddress("1531 N State Road 7")).save()
 
-    def customerRole = new Role(authority: 'ROLE_CUSTOMER').save(flush: true)
+    def customerRole = new Role(authority: 'ROLE_CUSTOMER').save()
 
     String password = springSecurityService.encodePassword('password')
     def testUser = new User (username: 'joeuser', enabled: true, password: password, email: 'joeuser@fakemail.com')

@@ -9,5 +9,6 @@ class Speaker {
     static hasMany = [sessions:SpeakerSession]
 
     static constraints = {
+        bio(maxSize:2048)
     }
 }
