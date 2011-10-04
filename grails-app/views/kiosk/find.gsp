@@ -53,10 +53,7 @@
           map.addOverlay(marker);
 
           $('kiosk-link-' + kiosk.id).observe("click", function(e) {
-              e.stop();
-              alert("HI!");
             map.openInfoWindowHtml(point, kioskHtml);
-
           });
         });
       });
