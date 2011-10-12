@@ -1,9 +1,9 @@
 dataSource {
     pooled = true
-    driverClassName = "org.postgresql.Driver"
+    driverClassName = "com.mysql.jdbc.Driver"
     username = "fluffbox"
     password = "fluffbox"
-    dialect = "org.hibernate.dialect.PostgreSQLDialect"
+    dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -15,7 +15,7 @@ environments {
     development {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            url = "jdbc:postgresql://33.33.33.10:5432/fluffbox"
+            url = "jdbc:mysql://33.33.33.10:3306/fluffbox"
         }
     }
     test {
@@ -26,8 +26,8 @@ environments {
     }
     production {
         dataSource {
-            dbCreate = "update"
-            url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+            dbCreate = "create-drop"
+            url = "jdbc:mysql://33.33.33.10:3306/fluffbox"
         }
     }
 }

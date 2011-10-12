@@ -3,7 +3,7 @@
 load 'deploy'
 
 set :application, "fluffbox-rwx"
-ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "capistrano_rsa")] 
+ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")] 
 
 default_run_options[:pty] = true
 
@@ -15,15 +15,14 @@ set :repository do
 end
 
 # LOCAL
-set :war, "/Users/mstine/.hudson/jobs/Fluffbox-RWX/workspace/target/fluffbox-rwx-0.1.war"
+set :war, "/Users/mstine/Projects/fluffbox-rwx/target/fluffbox-rwx-0.1.war"
 
 # TOMCAT SERVERS
-role :webserver, "localhost"
-set :tomcat_home, "/Users/mstine/Tools/tomcat/"
-set :tomcat_ctrl, "/Users/mstine/Tools/tomcat/bin"
+role :webserver, "33.33.33.11"
+set :tomcat_base, "/var/lib/tomcat6/"
 
 # USER / SHELL
-set :user, "mstine" # the user to run remote commands as
+set :user, "fluffbox" # the user to run remote commands as
 set :use_sudo, false
 
 set :deploy_from do
@@ -47,12 +46,12 @@ namespace :tomcat do
 
   desc "start tomcat"
   task :start do
-    run "nohup #{tomcat_ctrl}/startup.sh"
+    run "#{sudo} service tomcat6 start"
   end
 
   desc "stop tomcat"
   task :stop do
-    run "#{tomcat_ctrl}/shutdown.sh"
+    run "#{sudo} service tomcat6 stop"
   end
 
   desc "stop and start tomcat"
@@ -61,9 +60,9 @@ namespace :tomcat do
     tomcat.start
   end
 
-  desc "tail :tomcat_home/logs/*.log and logs/catalina.out"
+  desc "tail :tomcat_base/logs/*.log and logs/catalina.out"
   task :tail do
-    stream "tail -f #{tomcat_home}/logs/*.log #{tomcat_home}/logs/catalina.out"
+    stream "tail -f #{tomcat_base}/logs/*.log #{tomcat_base}/logs/catalina.out"
   end
 
 end
@@ -72,7 +71,7 @@ end
 # link the current/whatever.war into our webapps/whatever.war
 #
 after 'deploy:setup' do
-  cmd = "ln -sf #{deploy_to}/current/`basename #{war}` #{tomcat_home}/webapps/`basename #{war}`"
+  cmd = "ln -sf #{deploy_to}/current/`basename #{war}` #{tomcat_base}/webapps/`basename #{war}`"
   puts cmd
   run cmd
 end
@@ -101,10 +100,11 @@ end
 before 'deploy:symlink' do
   tomcat.stop
   sleep 10
+  run "#{sudo} rm -rf #{tomcat_base}webapps/fluffbox-rwx-0.1"
 end
 
 def getDeploymentStatus
-  output = `wget -O - http://localhost:8081/fluffbox-rwx-0.1 | grep "Easy NFJS Speaker Rentals" | wc -l`
+  output = `wget -O - http://33.33.33.11:8080/fluffbox-rwx-0.1 | grep "Easy NFJS Speaker Rentals" | wc -l`
   status = output.strip
 end 
 
