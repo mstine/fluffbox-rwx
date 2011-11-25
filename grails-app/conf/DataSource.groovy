@@ -27,7 +27,7 @@ environments {
     production {
         dataSource {
             dbCreate = "create-drop"
-            url = "jdbc:mysql://33.33.33.10:3306/fluffbox"
+            url = "jdbc:mysql://10.182.99.31:3306/fluffbox"
         }
     }
 }

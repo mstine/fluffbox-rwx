@@ -18,7 +18,7 @@ end
 set :war, "/Users/mstine/Projects/fluffbox-rwx/target/fluffbox-rwx-0.1.war"
 
 # TOMCAT SERVERS
-role :webserver, "33.33.33.11"
+role :webserver, "50.57.189.205"
 set :tomcat_base, "/var/lib/tomcat6/"
 
 # USER / SHELL
@@ -104,7 +104,7 @@ before 'deploy:symlink' do
 end
 
 def getDeploymentStatus
-  output = `wget -O - http://33.33.33.11:8080/fluffbox-rwx-0.1 | grep "Easy NFJS Speaker Rentals" | wc -l`
+  output = `wget -O - http://50.57.189.205:8080/fluffbox-rwx-0.1 | grep "Easy NFJS Speaker Rentals" | wc -l`
   status = output.strip
 end 
 
