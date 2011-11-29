@@ -10,7 +10,7 @@
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
 
-gmap.apiKey = "ABQIAAAACh6QoGMH5jXrbrlXKcLtrxQ08XXLLN4O7oQpU9l3TbMGvsofGBQVtC9_zrXhYjDz6YvYT-ZuoeYF0A"
+gmap.apiKey = "ABQIAAAACh6QoGMH5jXrbrlXKcLtrxS3jrCOtJPXsEnxhlzc0I4eAAAshRRdnViIHOVYRhp-M6CGN7qioMsaNg"
 
 
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
