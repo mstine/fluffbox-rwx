@@ -6,5 +6,6 @@
   </head>
   <body>
     <h1>This concludes your fake rental experience!</h1>
+    <p>${result}</p>
   </body>
 </html>

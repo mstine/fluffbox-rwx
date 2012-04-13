@@ -1,3 +1,5 @@
 *.iws
 target/**
 .DS_Store
+target-eclipse
+.settings
