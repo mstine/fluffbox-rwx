@@ -28,6 +28,6 @@ grails.project.dependency.resolution = {
 
         // runtime 'mysql:mysql-connector-java:5.1.5'
 		
-		compile 'com.fluffbox:fluffbox-si:1.0-SNAPSHOT'
+		compile 'com.fluffbox:fluffbox-si:1.0.2-SNAPSHOT'
     }
 }
